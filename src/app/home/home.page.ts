@@ -25,7 +25,7 @@ export class HomePage {
     })
   }
 
-  /*uptData() {
+  uptData() {
     const data: any = {
       id: 1,
       title: 'teste',
@@ -51,12 +51,6 @@ export class HomePage {
 
   getData() {
     this.apiService.getData().subscribe(data => {
-      //passa para variavel- seta todos os dados para dentro de data
-      //const response = data as any;
-      //faz a identificação do json
-      //const objetoRetorno = JSON.parse(response._slip)
-      //this.listaConselhos = data as any
-      // console.log(objetoRetorno);
       console.log(data);
     });
 

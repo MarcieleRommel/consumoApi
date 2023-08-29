@@ -24,9 +24,9 @@ export class ApiService {
   }
 
   //Simula atualização de dados
-  /*uptData() {
+  uptData() {
     return this.HTTP.put(`${this.url}posts/1`, JSON.stringify(data),this.options);
-  }*/
+  }
 
   //Simula que vai apagar os dados
   delData() {
