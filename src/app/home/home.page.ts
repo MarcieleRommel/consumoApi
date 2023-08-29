@@ -35,7 +35,7 @@ export class HomePage {
     this.apiService.uptData(data).subscribe(data => {
       console.log(data);
     });
-  }*/
+  }
 
   createData() {
     const data: any = {
