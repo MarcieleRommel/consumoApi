@@ -6,17 +6,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ApiService {
   // passa o link numa string mantendo a privacidade dos dados
-  //"https://api.adviceslip.com/"
-  private url: string = "https://jsonplaceholder.typicode.com/"
+  private url: string = "https://api.adviceslip.com/"
   private options: any = { headers: new HttpHeaders({ 'Content-type': 'application/json; charset=UTF-8' }) };
 
   // monta o link e pega os dados
   constructor(private HTTP: HttpClient) { }
-  //metodo para pegar os dados GET
-  // colocar o path aqui
+  //metodo para pegar os dados GET colocar o path aqui
   getData() {
-    return this.HTTP.get(`${this.url}todos`)
+    return this.HTTP.get(`${this.url}advice`)
   }
+  
 
   // Simula criação do WS
   createData(data: any) {

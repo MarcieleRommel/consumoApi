@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 
 
@@ -7,24 +7,36 @@ import { ApiService } from '../service/api.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  public listaConselhos = new Array<any>();
+  public listaConselhos: any[] = []
 
   constructor(private apiService: ApiService) {
-    //this.getData();
+    this.getData();
     //this.createData();
     //this.uptData();
-    this.delData();
+    //this.delData();
 
   }
+
+  ngOnInit(): void {
+    this.apiService();
+  }
+
+  //pega os dados
+  getData() {
+    this.apiService.getData().subscribe((data: any) => this.listaConselhos = data.results);
+
+  }
+
   // exclusão de dados
   delData() {
-    this.apiService.delData().subscribe(data=>{
+    this.apiService.delData().subscribe(data => {
       console.log(data);
     })
   }
 
+  // atualização
   uptData() {
     const data: any = {
       id: 1,
@@ -37,6 +49,7 @@ export class HomePage {
     });
   }
 
+  //criação
   createData() {
     const data: any = {
       "userId": 1,
@@ -49,12 +62,10 @@ export class HomePage {
     });
   }
 
-  getData() {
+  // testando via console.log
+  /*getData() {
     this.apiService.getData().subscribe(data => {
       console.log(data);
-    });
+    });*/
 
-  }
 }
-
-

@@ -17,4 +17,15 @@
     <strong>{{advice.advice}}</strong>
     <p>Resultados no console</p>
   </div>-->
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <h1><strong>Conselhos</strong></h1>
+      </ion-row>
+      <ion-row *ngFor="let listaConselho of listaConselhos; let i = index">
+        <ion-item button ><h3 [innexText]="lista.Conselhos"></h3></ion-item>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
 </ion-content>
